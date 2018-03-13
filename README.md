@@ -13,7 +13,7 @@ An image banner
 | src  | string | required | image url                  |
 | href | string | required | links the image to this ur |
 
-Also includes `style`, `className`, `target` and other properties of `a` tag.
+Also includes `style`, `className`, `target` and other properties of `a` tag. Needs `height` and `width` styles to display properly.
 
 ```js
 <Banner
