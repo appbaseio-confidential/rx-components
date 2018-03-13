@@ -27,31 +27,31 @@ const Navbar = styled('nav')`
 			flex-direction: row;
 			align-items: center;
 		}
+
+		ul.links {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+
+			li {
+				padding: 0 15px;
+
+				a {
+					font-size: 14px;
+					color: #fff;
+					letter-spacing: 0.02rem;
+					text-transform: uppercase;
+				}
+			}
+		}
 	}
 
 	.logo {
 		margin-right: 20px;
-	}
-
-	ul {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		height: 100%;
-
-		li {
-			padding: 0 15px;
-
-			a {
-				font-size: 14px;
-				color: #fff;
-				letter-spacing: 0.02rem;
-				text-transform: uppercase;
-			}
-		}
 	}
 `;
 
