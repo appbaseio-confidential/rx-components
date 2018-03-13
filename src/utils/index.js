@@ -1,6 +1,10 @@
 import defaultTheme from '../styles/theme';
 
-const getThemeProperty = (theme, property) =>
-	(theme ? theme[property] : defaultTheme[property]) || null;
+const getThemeProperty = (theme, property) => {
+	if (theme) {
+		return theme[property] || defaultTheme[property] || null;
+	}
+	return defaultTheme[property] || null;
+};
 
 export { getThemeProperty };
