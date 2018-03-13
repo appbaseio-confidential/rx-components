@@ -7,7 +7,7 @@ const Banner = styled.a`
 	position: relative;
 	display: inline-flex;
 	overflow: hidden;
-	box-shadow: ${({ theme }) => getThemeProperty(theme, 'boxShadow')};
+	box-shadow: ${({ theme }) => getThemeProperty(theme, 'colors', 'boxShadow')};
 `;
 
 const image = css`
