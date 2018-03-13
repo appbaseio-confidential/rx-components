@@ -70,7 +70,7 @@ const searchbox = css`
 	border: 0;
 	border-radius: 2px;
 	height: 38px;
-	min-width: 400px;
+	min-width: 500px;
 
 	input {
 		border: 0;
