@@ -2,9 +2,15 @@ import styled, { css } from 'react-emotion';
 import { getThemeProperty } from '../../utils';
 
 const Navbar = styled('nav')`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 56px;
 	background-color: ${props => getThemeProperty(props.theme, 'colors', 'primaryColor')};
 	padding: 0 20px;
-	height: 56px;
+	line-height: 1.3;
+	z-index: 100;
 
 	& > .wrapper {
 		max-width: 1200px;
