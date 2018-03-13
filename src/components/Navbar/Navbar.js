@@ -47,6 +47,16 @@ const Navbar = styled('nav')`
 					text-transform: uppercase;
 				}
 			}
+
+			.cart {
+				display: flex;
+				align-items: center;
+
+				.icon {
+					font-size: 20px;
+					margin-right: 5px;
+				}
+			}
 		}
 	}
 
