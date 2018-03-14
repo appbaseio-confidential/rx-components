@@ -8,12 +8,13 @@ const Navbar = styled('nav')`
 	width: 100%;
 	height: 56px;
 	background-color: ${props => getThemeProperty(props.theme, 'colors', 'primaryColor')};
-	padding: 0 20px;
+	padding: 0;
 	line-height: 1.3;
 	z-index: 100;
 
 	& > .wrapper {
-		max-width: 1200px;
+		max-width: 1220px;
+		padding: 0 20px;
 		width: 100%;
 		height: 100%;
 		margin: 0 auto;
