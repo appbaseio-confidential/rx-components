@@ -12,4 +12,4 @@ const getThemeProperty = (theme, property, subProperty) => {
 	return defaultTheme[property] || null;
 };
 
-export { getThemeProperty };
+export { getThemeProperty }; //eslint-disable-line
