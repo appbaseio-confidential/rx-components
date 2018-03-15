@@ -39,13 +39,18 @@ const Navbar = styled('nav')`
 			height: 100%;
 
 			li {
-				padding: 0 15px;
+				padding: 0 0 0 35px;
 
 				a {
 					font-size: 14px;
 					color: #fff;
 					letter-spacing: 0.02rem;
 					text-transform: uppercase;
+
+					&:hover,
+					&:focus {
+						text-decoration: none;
+					}
 				}
 			}
 
