@@ -7,7 +7,10 @@
 	"js:next": "lib/index.es.js",
 	"sideEffects": false,
 	"repository": "https://github.com/appbaseio-confidential/rx-components.git",
-	"author": "Divyanshu Maithani <div.blackcat@gmail.com>",
+	"authors": [
+		"Deepak Grover <deepakgrover333@gmail.com>",
+		"Divyanshu Maithani <div.blackcat@gmail.com>"
+	],
 	"license": "MIT",
 	"scripts": {
 		"watch": "yarn build:commonjs -w && yarn build:es -w",
