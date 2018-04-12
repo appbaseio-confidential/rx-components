@@ -1,14 +1,17 @@
 import React from 'react';
-import { string, object } from 'prop-types';
+import { string, object, number } from 'prop-types';
 
 import Container, { image } from '../../styles/Banner';
 
-const Banner = ({ src, ...props }) => (
+const Banner = ({
+ src, heightRatio, widthRatio, ...props
+}) => (
 	<Container {...props}>
 		<div
 			className={image}
 			style={{
 				backgroundImage: `url(${src})`,
+				paddingTop: `${heightRatio / widthRatio * 100}%`, // eslint-disable-line
 			}}
 		/>
 	</Container>
@@ -17,6 +20,8 @@ const Banner = ({ src, ...props }) => (
 Banner.defaultProps = {
 	style: {},
 	className: '',
+	heightRatio: 3,
+	widthRatio: 4,
 };
 
 Banner.propTypes = {
@@ -24,6 +29,8 @@ Banner.propTypes = {
 	href: string.isRequired,
 	style: object,
 	className: string,
+	heightRatio: number,
+	widthRatio: number,
 };
 
 export default Banner;

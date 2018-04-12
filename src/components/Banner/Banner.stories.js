@@ -11,14 +11,9 @@ const bannerImages = [
 
 storiesOf('Banner', module)
 	.add('default', () => (
-		<Banner
-			href="#"
-			style={{
-				width: 550,
-				height: 300,
-			}}
-			src={bannerImages[0]}
-		/>
+		<div style={{ maxWidth: 500 }}>
+			<Banner href="#" heightRatio={515} widthRatio={960} src={bannerImages[0]} />
+		</div>
 	))
 	.add('in a row', () => (
 		<div
@@ -28,26 +23,8 @@ storiesOf('Banner', module)
 				gridGap: 20,
 			}}
 		>
-			<Banner
-				href="#"
-				style={{
-					height: 300,
-				}}
-				src={bannerImages[1]}
-			/>
-			<Banner
-				href="#"
-				style={{
-					height: 300,
-				}}
-				src={bannerImages[2]}
-			/>
-			<Banner
-				href="#"
-				style={{
-					height: 300,
-				}}
-				src={bannerImages[3]}
-			/>
+			<Banner href="#" src={bannerImages[1]} />
+			<Banner href="#" src={bannerImages[2]} />
+			<Banner href="#" src={bannerImages[3]} />
 		</div>
 	));
