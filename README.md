@@ -26,3 +26,11 @@ Also includes `style`, `className`, `target` and other properties of `a` tag. Ne
 	widthRatio={75}
 />
 ```
+
+## Navbar
+
+App navbar
+
+| prop   | type | default | description               |
+| ------ | :--: | :-----: | :------------------------ |
+| sticky | bool |    -    | Fix the navbar to the top |
