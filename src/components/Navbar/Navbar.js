@@ -2,7 +2,11 @@ import styled, { css } from 'react-emotion';
 import { getThemeProperty } from '../../utils';
 
 const Navbar = styled('nav')`
-	position: fixed;
+	${({ sticky }) =>
+		sticky &&
+		css`
+			position: fixed;
+		`};
 	top: 0;
 	left: 0;
 	width: 100%;
