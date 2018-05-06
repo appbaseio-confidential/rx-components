@@ -18,9 +18,10 @@
 		"build:commonjs": "BABEL_ENV=commonjs babel --ignore __tests__ src --out-dir lib",
 		"build:es": "BABEL_ENV=es babel src/index.js --out-file lib/index.es.js",
 		"storybook": "BABEL_ENV=es start-storybook -p 9001 -c .storybook",
-		"test": "jest",
+		"test": "BABEL_ENV=commonjs jest",
+		"test:watch": "BABEL_ENV=commonjs jest --watch",
 		"lint": "eslint .",
-		"precommit": "lint-staged"
+		"precommit": "lint-staged && yarn test"
 	},
 	"lint-staged": {
 		"*.js": ["eslint"]
