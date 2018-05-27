@@ -4,7 +4,7 @@ import { string, object, number } from 'prop-types';
 import Container, { image } from '../../styles/Banner';
 
 const Banner = ({
- src, heightRatio, widthRatio, ...props
+ src, heightRatio, widthRatio, extraProps, ...props
 }) => (
 	<Container {...props}>
 		<div
@@ -31,6 +31,7 @@ Banner.propTypes = {
 	className: string,
 	heightRatio: number,
 	widthRatio: number,
+	extraProps: object, // only needed to store rx-builder related info
 };
 
 export default Banner;
