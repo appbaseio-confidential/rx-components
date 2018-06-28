@@ -16,21 +16,23 @@ const Navbar = styled('nav')`
 	line-height: 1.3;
 	z-index: 100;
 
+	@media all and (max-width: 768px) {
+		height: 112px;
+	}
+
 	& > .wrapper {
 		max-width: 1220px;
 		padding: 0 20px;
 		width: 100%;
 		height: 100%;
 		margin: 0 auto;
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: auto auto 1fr;
 		align-items: center;
-		justify-content: space-between;
 
-		& > div {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
+		@media all and (max-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-flow: dense;
 		}
 
 		ul.links {
@@ -41,6 +43,11 @@ const Navbar = styled('nav')`
 			margin: 0;
 			padding: 0;
 			height: 100%;
+			justify-self: flex-end;
+
+			@media all and (max-width: 768px) {
+				height: auto;
+			}
 
 			li {
 				padding: 0 0 0 35px;
@@ -81,6 +88,16 @@ const searchbox = css`
 	border-radius: 2px;
 	height: 38px;
 	min-width: 500px;
+
+	@media all and (max-width: 800px) {
+		min-width: 400px;
+	}
+
+	@media all and (max-width: 768px) {
+		min-width: auto;
+		width: 100%;
+		grid-column: 1 / -1;
+	}
 
 	input {
 		border: 0;
