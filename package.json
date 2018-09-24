@@ -9,7 +9,8 @@
 	"repository": "https://github.com/appbaseio-confidential/rx-components.git",
 	"authors": [
 		"Deepak Grover <deepakgrover333@gmail.com>",
-		"Divyanshu Maithani <div.blackcat@gmail.com>"
+		"Divyanshu Maithani <div.blackcat@gmail.com>",
+		"Kuldeep Saxena <kuldepsaxena155@gmail.com>"
 	],
 	"license": "MIT",
 	"scripts": {
@@ -29,8 +30,9 @@
 		]
 	},
 	"devDependencies": {
+		"@storybook/addon-actions": "^3.4.11",
 		"@storybook/addon-info": "^3.3.15",
-		"@storybook/addon-knobs": "^3.3.15",
+		"@storybook/addon-knobs": "^3.4.11",
 		"@storybook/addon-options": "^3.3.15",
 		"@storybook/react": "^3.3.15",
 		"@storybook/storybook-deployer": "^2.3.0",
@@ -56,10 +58,15 @@
 		"react-test-renderer": "^16.3.2"
 	},
 	"peerDependencies": {
+		"antd": "*",
 		"emotion": "*",
 		"emotion-theming": "*",
 		"prop-types": "*",
 		"react": "*",
-		"react-emotion": "*"
+		"react-emotion": "*",
+		"react-icons": "*"
+	},
+	"dependencies": {
+		"react-image-magnify": "^2.7.2"
 	}
 }
