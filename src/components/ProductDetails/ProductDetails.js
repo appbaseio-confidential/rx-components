@@ -140,7 +140,11 @@ const ProductDetails = ({
 					</TextButton>
 				)}
 				{onClickRemove && (
-					<TextButton css={removeBtn} role="button" onClick={onClickRemove}>
+					<TextButton
+						css={onClickSaveLater ? removeBtn : saveForLaterBtn}
+						role="button"
+						onClick={onClickRemove}
+					>
 						Remove
 					</TextButton>
 				)}
