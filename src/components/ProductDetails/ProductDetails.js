@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'antd';
 import { css } from 'emotion';
-import { string, shape, number, oneOfType, arrayOf, func, bool, object } from 'prop-types';
+import { string, shape, number, oneOfType, arrayOf, func, bool } from 'prop-types';
 import styled from 'react-emotion';
 import FaPlus from 'react-icons/lib/io/plus';
 import FaMinus from 'react-icons/lib/io/minus';
@@ -74,7 +74,7 @@ const ProductDetails = ({
 	onChangeQuantity,
 	onClickSaveLater,
 	onClickRemove,
-	deliveryPrice,
+	deliveryText,
 	...props
 }) => (
 	<Card
@@ -82,7 +82,6 @@ const ProductDetails = ({
 		css={`
 			${loading ? 'pointer-events: none;opacity: 0.5' : undefined};
 			border: solid 1px #f0f0f0;
-			border-bottom: none;
 		`}
 		{...props}
 	>
@@ -107,51 +106,54 @@ const ProductDetails = ({
 					</Flex>
 				</Flex>
 			</Flex>
-			{deliveryPrice && (
+			{deliveryText && (
 				<Flex>
-					<div css={deliveryInfo}>Delivery in 3-4 days: {deliveryPrice}</div>
+					<div css={deliveryInfo}>{deliveryText}</div>
 				</Flex>
 			)}
 		</Flex>
 		<Flex css={main}>
+			{onChangeQuantity && (
+				<Flex>
+					<Button
+						disabled={quantity === 1}
+						onClick={() => onChangeQuantity(quantity - 1)}
+						shape="circle"
+						css={position}
+					>
+						<FaMinus color="#212121" size={12} style={{ marginBottom: '3px' }} />
+					</Button>
+					<div css={$quantity}>{quantity}</div>
+					<Button
+						css={position}
+						onClick={() => onChangeQuantity(quantity + 1)}
+						shape="circle"
+					>
+						<FaPlus color="#212121" size={14} style={{ marginBottom: '3px' }} />
+					</Button>
+				</Flex>
+			)}
 			<Flex>
-				<Button
-					disabled={quantity === 1}
-					onClick={() => onChangeQuantity(quantity - 1)}
-					shape="circle"
-					css={position}
-				>
-					<FaMinus color="#212121" size={12} style={{ marginBottom: '3px' }} />
-				</Button>
-				<div css={$quantity}>{quantity}</div>
-				<Button
-					css={position}
-					onClick={() => onChangeQuantity(quantity + 1)}
-					shape="circle"
-				>
-					<FaPlus color="#212121" size={14} style={{ marginBottom: '3px' }} />
-				</Button>
-			</Flex>
-			<Flex>
-				<TextButton role="button" css={saveForLaterBtn} onClick={onClickSaveLater}>
-					SAVE FOR LATER
-				</TextButton>
-				<TextButton css={removeBtn} role="button" onClick={onClickRemove}>
-					Remove
-				</TextButton>
+				{onClickSaveLater && (
+					<TextButton role="button" css={saveForLaterBtn} onClick={onClickSaveLater}>
+						SAVE FOR LATER
+					</TextButton>
+				)}
+				{onClickRemove && (
+					<TextButton css={removeBtn} role="button" onClick={onClickRemove}>
+						Remove
+					</TextButton>
+				)}
 			</Flex>
 		</Flex>
 	</Card>
 );
 ProductDetails.defaultProps = {
-	onClickRemove: () => null,
 	onChangeQuantity: () => null,
-	onClickSaveLater: () => null,
 	image: {},
 	options: [],
 };
 ProductDetails.propTypes = {
-	style: object,
 	title: string,
 	quantity: number,
 	image: shape({
@@ -167,7 +169,7 @@ ProductDetails.propTypes = {
 	onClickRemove: func,
 	loading: bool,
 	onClickSaveLater: func,
-	deliveryPrice: oneOfType([string, number]),
+	deliveryText: oneOfType([string, number]),
 };
 
 export default ProductDetails;

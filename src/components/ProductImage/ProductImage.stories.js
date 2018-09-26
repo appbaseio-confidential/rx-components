@@ -9,7 +9,7 @@ const stories = storiesOf('ProductImage', module);
 stories.addDecorator(withKnobs);
 
 stories.add('default', () => (
-	<div style={{ maxWidth: 700 }}>
+	<div style={{ maxWidth: 700, padding: '20px' }}>
 		<ProductImage
 			image={{
 				src:
@@ -17,6 +17,10 @@ stories.add('default', () => (
 				alt: 'product_image',
 			}}
 			displayOfferTag={boolean('displayOfferTag')}
+			enlargedImageDimensions={{
+				width: 600,
+				height: 550,
+			}}
 		/>
 	</div>
 ));

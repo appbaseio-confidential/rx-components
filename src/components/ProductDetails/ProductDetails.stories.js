@@ -5,17 +5,17 @@ import { storiesOf } from '@storybook/react';
 import ProductDetails from './ProductDetails';
 
 storiesOf('ProductDetails', module).add('default', () => (
-	<div style={{ maxWidth: 700 }}>
+	<div style={{ maxWidth: 700, padding: '40px' }}>
 		<ProductDetails
 			image={{
 				src:
 					'https://cdn.shopify.com/s/files/1/0006/7724/9089/products/44694ee386818f3276566210464cf341_ac37348b-4add-45e3-8709-8d70ec9b6609_430x430.jpg?v=1522334356',
 				alt: 'product_image',
 			}}
-			title="Blue shirt"
+			title="Casual shoes (White)"
 			quantity={1}
 			price="$200"
-			deliveryPrice="$10"
+			deliveryText="Delivery in 3-4 days: $10"
 			options={[
 				{
 					name: 'Size',
@@ -23,7 +23,7 @@ storiesOf('ProductDetails', module).add('default', () => (
 				},
 				{
 					name: 'Color',
-					value: 'black',
+					value: 'white',
 				},
 			]}
 			onChangeQuantity={action('Quality Changed')}
