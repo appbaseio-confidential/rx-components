@@ -49,8 +49,8 @@ class ProductImage extends React.Component {
 	componentDidMount() {
 		this.updateDimensions(this.setImageDimensions(this.props.image.src));
 	}
-	componentWillReceiveProps(nextProps) {
-		if (this.props.image !== nextProps.image) {
+	componentDidUpdate(prevProps) {
+		if (prevProps.image !== this.props.image) {
 			this.updateDimensions(this.setImageDimensions(this.props.image.src));
 		}
 	}
